@@ -64,13 +64,13 @@ rule ffq:
 rule kallisto_quant:
   input:
     idx = kallisto_idx,
-    r1 = '/home/ishachakraborty/c_elegans/SRR12575567_1.fastq.gz', 
-    r2 = '/home/ishachakraborty/c_elegans/SRR12575567_2.fastq.gz',
+    r1 = '/home/ishachakraborty/c_elegans/SRR12575572_1.fastq.gz', 
+    r2 = '/home/ishachakraborty/c_elegans/SRR12575572_2.fastq.gz',
   output:
-    tsv = abundance_dir + '/SRR12575567/abundance.tsv'
+    tsv = abundance_dir + '/SRR12575572/abundance.tsv'
   threads: 4
   shell:
     ' '.join(['kallisto quant -i', kallisto_idx, '-o',
-              abundance_dir + '/SRR12575567',
+              abundance_dir + '/SRR12575572',
               '-t', '{threads}', '{input.r1}', '{input.r2}'])
 
